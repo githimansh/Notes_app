@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/pages/student.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -11,7 +12,13 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: (){}, child: Icon(Icons.add),),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Student()));
+        },
+        child: Icon(Icons.add),
+      ),
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -20,7 +27,7 @@ class _HomeState extends State<Home> {
               "Flutter",
               style: TextStyle(
                 color: Colors.blue,
-                fontSize: 20,
+                fontSize: 26,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -28,7 +35,7 @@ class _HomeState extends State<Home> {
               "Firebase",
               style: TextStyle(
                 color: Colors.orange,
-                fontSize: 20,
+                fontSize: 26,
                 fontWeight: FontWeight.bold,
               ),
             ),
